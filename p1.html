@@ -130,23 +130,63 @@
       padding: 38px 24px 55px;
     }
 
+    /* Practical Heading */
+
     .practical-heading {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 30px;
+      min-height: 42px;
     }
 
     .practical-label {
       color: var(--accent);
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      letter-spacing: 2.5px;
+      text-align: center;
     }
 
-    h1 {
-      color: var(--heading);
-      font-size: 29px;
-      line-height: 1.35;
-      font-weight: 700;
+    /* Copy Button */
+
+    .copy-button {
+      position: absolute;
+      right: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .copy-button:hover {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+    }
+
+    .copy-button svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .copy-button.copied {
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
     /* Content Sections */
@@ -300,15 +340,23 @@
 
       .practical-heading {
         margin-bottom: 23px;
+        min-height: 38px;
       }
 
       .practical-label {
-        font-size: 12px;
-        margin-bottom: 10px;
+        font-size: 15px;
+        letter-spacing: 2px;
       }
 
-      h1 {
-        font-size: 23px;
+      .copy-button {
+        padding: 9px 10px;
+        font-size: 12px;
+        gap: 6px;
+      }
+
+      .copy-button svg {
+        width: 14px;
+        height: 14px;
       }
 
       .content-section {
@@ -354,7 +402,8 @@
       }
     }
 
-    @media (max-width: 350px) {
+    @media (max-width: 380px) {
+
       .brand-name {
         font-size: 15px;
       }
@@ -362,6 +411,15 @@
       .header-button {
         font-size: 11px;
         padding: 9px 7px;
+      }
+
+      .copy-button {
+        font-size: 11px;
+        padding: 8px 8px;
+      }
+
+      .practical-label {
+        font-size: 13px;
       }
     }
 
@@ -417,117 +475,137 @@
   </header>
 
 
-  <!-- Main Content -->
+  <!-- Practical Content -->
 
   <main>
 
-    <div class="practical-heading">
-      <div class="practical-label">PRACTICAL 01</div>
+    <div id="practicalContent">
 
-      <h1>Installation and Setup of Digital Forensic Tools</h1>
+      <!-- Practical Number and Copy Button -->
+
+      <div class="practical-heading">
+
+        <div class="practical-label">PRACTICAL 01</div>
+
+        <button
+          class="copy-button"
+          id="copyButton"
+          onclick="copyPractical()">
+
+          <svg viewBox="0 0 24 24">
+            <rect x="8" y="8" width="13" height="13" rx="2"/>
+            <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
+          </svg>
+
+          <span id="copyText">Copy</span>
+
+        </button>
+
+      </div>
+
+
+      <!-- Aim -->
+
+      <section class="content-section">
+
+        <h2 class="section-title">Aim</h2>
+
+        <p class="section-content">
+          To install and set up digital forensic tools such as FTK Imager,
+          Autopsy, and Wireshark for acquiring, analyzing, and investigating
+          digital evidence.
+        </p>
+
+      </section>
+
+
+      <!-- Steps -->
+
+      <section class="content-section">
+
+        <h2 class="section-title">Steps</h2>
+
+        <ol class="steps-list">
+
+          <li>
+            <span class="step-title">Download the Tools</span>
+            <p class="step-description">
+              Visit the official websites of FTK Imager, Autopsy, and
+              Wireshark and download their installers.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-title">Install FTK Imager</span>
+            <p class="step-description">
+              Run the FTK Imager installer and follow the installation
+              instructions to complete the setup.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-title">Install Autopsy</span>
+            <p class="step-description">
+              Run the Autopsy installer, follow the setup instructions,
+              and install any required components.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-title">Install Wireshark</span>
+            <p class="step-description">
+              Run the Wireshark installer and install the required
+              packet-capture component, such as Npcap on Windows.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-title">Launch the Tools</span>
+            <p class="step-description">
+              Open each application and verify that it starts successfully
+              without errors.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-title">Verify the Setup</span>
+            <p class="step-description">
+              Check that FTK Imager can access its imaging functions,
+              Autopsy allows case creation, and Wireshark displays
+              the available network interfaces.
+            </p>
+          </li>
+
+          <li>
+            <span class="step-title">Complete the Setup</span>
+            <p class="step-description">
+              Confirm that all three tools are installed and ready
+              for their respective forensic tasks.
+            </p>
+          </li>
+
+        </ol>
+
+      </section>
+
+
+      <!-- Result -->
+
+      <section class="content-section">
+
+        <h2 class="section-title">Result</h2>
+
+        <p class="result-text">
+          FTK Imager, Autopsy, and Wireshark are installed and configured
+          for their respective digital forensic tasks.
+        </p>
+
+      </section>
+
     </div>
 
 
-    <!-- Aim -->
-
-    <section class="content-section">
-
-      <h2 class="section-title">Aim</h2>
-
-      <p class="section-content">
-        To install and set up digital forensic tools such as FTK Imager,
-        Autopsy, and Wireshark for acquiring, analyzing, and investigating
-        digital evidence.
-      </p>
-
-    </section>
-
-
-    <!-- Steps -->
-
-    <section class="content-section">
-
-      <h2 class="section-title">Steps</h2>
-
-      <ol class="steps-list">
-
-        <li>
-          <span class="step-title">Download the Tools</span>
-          <p class="step-description">
-            Visit the official websites of FTK Imager, Autopsy, and
-            Wireshark and download their installers.
-          </p>
-        </li>
-
-        <li>
-          <span class="step-title">Install FTK Imager</span>
-          <p class="step-description">
-            Run the FTK Imager installer and follow the installation
-            instructions to complete the setup.
-          </p>
-        </li>
-
-        <li>
-          <span class="step-title">Install Autopsy</span>
-          <p class="step-description">
-            Run the Autopsy installer, follow the setup instructions,
-            and install any required components.
-          </p>
-        </li>
-
-        <li>
-          <span class="step-title">Install Wireshark</span>
-          <p class="step-description">
-            Run the Wireshark installer and install the required
-            packet-capture component, such as Npcap on Windows.
-          </p>
-        </li>
-
-        <li>
-          <span class="step-title">Launch the Tools</span>
-          <p class="step-description">
-            Open each application and verify that it starts successfully
-            without errors.
-          </p>
-        </li>
-
-        <li>
-          <span class="step-title">Verify the Setup</span>
-          <p class="step-description">
-            Check that FTK Imager can access its imaging functions,
-            Autopsy allows case creation, and Wireshark displays
-            the available network interfaces.
-          </p>
-        </li>
-
-        <li>
-          <span class="step-title">Complete the Setup</span>
-          <p class="step-description">
-            Confirm that all three tools are installed and ready
-            for their respective forensic tasks.
-          </p>
-        </li>
-
-      </ol>
-
-    </section>
-
-
-    <!-- Result -->
-
-    <section class="content-section">
-
-      <h2 class="section-title">Result</h2>
-
-      <p class="result-text">
-        FTK Imager, Autopsy, and Wireshark are installed and configured
-        for their respective digital forensic tasks.
-      </p>
-
-    </section>
-
-
-    <!-- Navigation -->
+    <!-- Bottom Navigation -->
 
     <div class="page-navigation">
 
@@ -541,7 +619,8 @@
 
 
   <script>
-    // Dark mode is the default whenever the page loads.
+
+    // Dark mode is the default.
 
     function toggleTheme() {
       const body = document.body;
@@ -555,6 +634,53 @@
         button.textContent = "☀ Light";
       }
     }
+
+
+    // Copy the complete practical.
+
+    async function copyPractical() {
+
+      const content = document.getElementById("practicalContent");
+      const button = document.getElementById("copyButton");
+      const copyText = document.getElementById("copyText");
+
+      const practicalText = content.innerText.trim();
+
+      try {
+
+        await navigator.clipboard.writeText(practicalText);
+
+      } catch (error) {
+
+        const textArea = document.createElement("textarea");
+
+        textArea.value = practicalText;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+
+        document.body.appendChild(textArea);
+
+        textArea.select();
+
+        const copied = document.execCommand("copy");
+
+        document.body.removeChild(textArea);
+
+        if (!copied) {
+          copyText.textContent = "Failed";
+          return;
+        }
+      }
+
+      copyText.textContent = "Copied";
+      button.classList.add("copied");
+
+      setTimeout(() => {
+        copyText.textContent = "Copy";
+        button.classList.remove("copied");
+      }, 1800);
+    }
+
   </script>
 
 </body>
