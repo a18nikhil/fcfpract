@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111820">
+<title>Practical 06 | FCF Pract</title>
+<style>
+:root{--bg:#111820;--header:#15212C;--surface:#1A2632;--surface-hover:#223442;--heading:#F1F5F9;--text:#E8EEF3;--accent:#4DD0C8;--border:#30404D}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+header{width:100%;background:var(--header);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1100px;min-height:72px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:flex-start}
+.all-practicals-button{display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-size:14px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.all-practicals-button:hover{background:var(--surface-hover);border-color:var(--accent)}
+main{max-width:900px;margin:auto;padding:38px 24px 55px}
+.practical-heading{position:relative;display:flex;align-items:center;justify-content:center;min-height:42px;margin-bottom:30px}
+.practical-label{color:var(--accent);font-size:18px;font-weight:700;letter-spacing:2.5px;text-align:center}
+.copy-button{position:absolute;right:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
+.copy-button:hover{background:var(--surface-hover);border-color:var(--accent)}
+.copy-button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.copy-button.copied{color:var(--accent);border-color:var(--accent)}
+.content-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:25px 27px;margin-bottom:20px}
+.section-title{color:var(--accent);font-size:19px;font-weight:700;margin-bottom:16px}
+.section-content{color:var(--text);font-size:16px;line-height:1.75}
+.steps-list{list-style:none;counter-reset:step}
+.steps-list li{counter-increment:step;position:relative;padding-left:43px;margin-bottom:23px}
+.steps-list li:last-child{margin-bottom:0}
+.steps-list li::before{content:counter(step);position:absolute;left:0;top:1px;width:29px;height:29px;border-radius:50%;background:var(--surface-hover);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.step-title{display:block;color:var(--heading);font-size:16px;font-weight:700;margin-bottom:5px}
+.step-description{color:var(--text);font-size:15px;line-height:1.7}
+.question-list{list-style:none;counter-reset:question}
+.question-list li{counter-increment:question;margin-bottom:22px}
+.question-list li:last-child{margin-bottom:0}
+.question{display:block;color:var(--heading);font-weight:700;line-height:1.6;margin-bottom:7px}
+.question::before{content:counter(question) ". ";color:var(--accent)}
+.answer{font-size:15px;line-height:1.75}
+.page-navigation{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px}
+.nav-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);background:var(--surface);text-decoration:none;font-size:15px;font-weight:600}
+.nav-button:hover{background:var(--surface-hover)}
+@media(max-width:650px){
+.header-inner{min-height:65px;padding:10px 15px}
+.all-practicals-button{padding:10px 12px;font-size:13px}
+main{padding:27px 15px 40px}
+.practical-heading{margin-bottom:23px;min-height:38px}
+.practical-label{font-size:15px;letter-spacing:2px}
+.copy-button{padding:9px 10px;font-size:12px;gap:6px}
+.copy-button svg{width:14px;height:14px}
+.content-section{padding:20px 17px;border-radius:14px;margin-bottom:15px}
+.section-title{font-size:18px;margin-bottom:13px}
+.section-content{font-size:15px;line-height:1.7}
+.steps-list li{padding-left:38px;margin-bottom:21px}
+.steps-list li::before{width:27px;height:27px;font-size:13px}
+.step-title{font-size:15px}
+.step-description{font-size:14px;line-height:1.7}
+.question{font-size:15px}
+.answer{font-size:14px;line-height:1.7}
+.nav-button{font-size:13px;padding:12px 13px}
+}
+@media(max-width:380px){
+.all-practicals-button{font-size:12px;padding:9px 10px}
+.copy-button{font-size:11px;padding:8px}
+.practical-label{font-size:13px}
+.nav-button{font-size:12px;padding:11px 10px}
+}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="all-practicals-button">← All Pract</a></div></header>
+<main>
+<div id="practicalContent">
+<div class="practical-heading">
+<div class="practical-label">PRACTICAL 06</div>
+<button class="copy-button" id="copyButton" onclick="copyPractical()">
+<svg viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+<span id="copyText">Copy</span>
+</button>
+</div>
+<section class="content-section"><h2 class="section-title">Background</h2><p class="section-content">Silk Road was an online black market on the Tor network where illegal goods were sold, paid for in Bitcoin. It was run by a user called "Dread Pirate Roberts" (DPR).</p></section><section class="content-section"><h2 class="section-title">The Digital Evidence</h2><ul class="section-content" style="padding-left:24px;line-height:1.8"><li><strong>Early online trail:</strong> Investigators linked an early forum post promoting Silk Road, and a later post seeking an IT specialist, to an email address tied to Ross Ulbricht.</li><li><strong>Live capture:</strong> In October 2013, agents arrested him in a public library in San Francisco. They staged a distraction so they could take his laptop while it was open and logged in as the site's administrator, before he could close or lock it.</li><li><strong>What the laptop held:</strong> Chat logs, a personal journal, server-related files and Bitcoin wallets. Blockchain analysis also helped track the money.</li></ul><p class="section-content" style="margin-top:14px">He was convicted in 2015 and sentenced to life in prison. (He later received a presidential pardon in January 2025.)</p></section><section class="content-section"><h2 class="section-title">Concepts Covered</h2><p class="section-content">Live acquisition vs. shutting down a system, volatile data and encryption, network and email tracing, cryptocurrency forensics, search warrants and legal authority.</p></section><section class="content-section"><h2 class="section-title">Discussion Questions and Model Answers</h2><ol class="question-list"><li><span class="question">Why was it important to seize the laptop while it was still running and unlocked?</span><p class="answer">Answer: If the laptop had been shut down or locked, encryption could have made the data inaccessible without a password. Seizing it live preserved the open, logged-in session, including the administrator access to the site, and any data held in memory. It also prevented him from closing, wiping or remotely deleting evidence, and it helped tie him to the account at that moment.</p></li><li><span class="question">What is volatile data, and what is lost if a suspect's computer is simply powered off?</span><p class="answer">Answer: Volatile data is information that exists only while the computer has power. Examples include the contents of RAM, running processes, open network connections, logged-in sessions, clipboard contents, and encryption keys held in memory. Powering off destroys these and can re-lock encrypted drives. Investigators follow the "order of volatility" and capture the most fleeting data first.</p></li><li><span class="question">Explain chain of custody and why it matters for evidence like the laptop.</span><p class="answer">Answer: Chain of custody is the documented, chronological record of who collected, handled, transferred, analyzed and stored a piece of evidence, with dates, times and reasons. It shows that the evidence is authentic and has not been altered or contaminated. If there are gaps, the defense can argue tampering, and a court may exclude the evidence. For the laptop, this means logging its seizure, every person who accessed it, the creation and hashing of forensic images, and its secure storage.</p></li><li><span class="question">What are the privacy and legal limits when investigators examine a suspect's personal devices?</span><p class="answer">Answer: Rules vary by country, but generally investigators need lawful authority, such as a warrant based on reasonable grounds that describes the place and the kind of data to be searched. Devices hold large amounts of personal information, including that of innocent third parties, so searches should be limited to the scope of the authorization and be proportionate. Other issues include whether a suspect can be compelled to reveal passwords, how border searches are treated, and how long seized data may be retained. Evidence gathered unlawfully may be challenged or excluded.</p></li></ol></section>
+</div>
+<div class="page-navigation"><a href="p5.html" class="nav-button">← Pract 5</a><span></span></div>
+</main>
+<script>
+async function copyPractical(){
+ const content=document.getElementById("practicalContent");
+ const button=document.getElementById("copyButton");
+ const copyText=document.getElementById("copyText");
+ const practicalText=content.innerText.trim();
+ try{await navigator.clipboard.writeText(practicalText)}
+ catch(error){
+  const textArea=document.createElement("textarea");
+  textArea.value=practicalText;textArea.style.position="fixed";textArea.style.opacity="0";
+  document.body.appendChild(textArea);textArea.select();
+  const copied=document.execCommand("copy");document.body.removeChild(textArea);
+  if(!copied){copyText.textContent="Failed";return}
+ }
+ copyText.textContent="Copied";button.classList.add("copied");
+ setTimeout(()=>{copyText.textContent="Copy";button.classList.remove("copied")},1800);
+}
+</script>
+</body>
+</html>

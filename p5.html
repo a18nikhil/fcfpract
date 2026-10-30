@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111820">
+<title>Practical 05 | FCF Pract</title>
+<style>
+:root{--bg:#111820;--header:#15212C;--surface:#1A2632;--surface-hover:#223442;--heading:#F1F5F9;--text:#E8EEF3;--accent:#4DD0C8;--border:#30404D}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+header{width:100%;background:var(--header);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1100px;min-height:72px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:flex-start}
+.all-practicals-button{display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-size:14px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.all-practicals-button:hover{background:var(--surface-hover);border-color:var(--accent)}
+main{max-width:900px;margin:auto;padding:38px 24px 55px}
+.practical-heading{position:relative;display:flex;align-items:center;justify-content:center;min-height:42px;margin-bottom:30px}
+.practical-label{color:var(--accent);font-size:18px;font-weight:700;letter-spacing:2.5px;text-align:center}
+.copy-button{position:absolute;right:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
+.copy-button:hover{background:var(--surface-hover);border-color:var(--accent)}
+.copy-button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.copy-button.copied{color:var(--accent);border-color:var(--accent)}
+.content-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:25px 27px;margin-bottom:20px}
+.section-title{color:var(--accent);font-size:19px;font-weight:700;margin-bottom:16px}
+.section-content{color:var(--text);font-size:16px;line-height:1.75}
+.steps-list{list-style:none;counter-reset:step}
+.steps-list li{counter-increment:step;position:relative;padding-left:43px;margin-bottom:23px}
+.steps-list li:last-child{margin-bottom:0}
+.steps-list li::before{content:counter(step);position:absolute;left:0;top:1px;width:29px;height:29px;border-radius:50%;background:var(--surface-hover);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.step-title{display:block;color:var(--heading);font-size:16px;font-weight:700;margin-bottom:5px}
+.step-description{color:var(--text);font-size:15px;line-height:1.7}
+.question-list{list-style:none;counter-reset:question}
+.question-list li{counter-increment:question;margin-bottom:22px}
+.question-list li:last-child{margin-bottom:0}
+.question{display:block;color:var(--heading);font-weight:700;line-height:1.6;margin-bottom:7px}
+.question::before{content:counter(question) ". ";color:var(--accent)}
+.answer{font-size:15px;line-height:1.75}
+.page-navigation{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px}
+.nav-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);background:var(--surface);text-decoration:none;font-size:15px;font-weight:600}
+.nav-button:hover{background:var(--surface-hover)}
+@media(max-width:650px){
+.header-inner{min-height:65px;padding:10px 15px}
+.all-practicals-button{padding:10px 12px;font-size:13px}
+main{padding:27px 15px 40px}
+.practical-heading{margin-bottom:23px;min-height:38px}
+.practical-label{font-size:15px;letter-spacing:2px}
+.copy-button{padding:9px 10px;font-size:12px;gap:6px}
+.copy-button svg{width:14px;height:14px}
+.content-section{padding:20px 17px;border-radius:14px;margin-bottom:15px}
+.section-title{font-size:18px;margin-bottom:13px}
+.section-content{font-size:15px;line-height:1.7}
+.steps-list li{padding-left:38px;margin-bottom:21px}
+.steps-list li::before{width:27px;height:27px;font-size:13px}
+.step-title{font-size:15px}
+.step-description{font-size:14px;line-height:1.7}
+.question{font-size:15px}
+.answer{font-size:14px;line-height:1.7}
+.nav-button{font-size:13px;padding:12px 13px}
+}
+@media(max-width:380px){
+.all-practicals-button{font-size:12px;padding:9px 10px}
+.copy-button{font-size:11px;padding:8px}
+.practical-label{font-size:13px}
+.nav-button{font-size:12px;padding:11px 10px}
+}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="all-practicals-button">← All Pract</a></div></header>
+<main>
+<div id="practicalContent">
+<div class="practical-heading">
+<div class="practical-label">PRACTICAL 05</div>
+<button class="copy-button" id="copyButton" onclick="copyPractical()">
+<svg viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+<span id="copyText">Copy</span>
+</button>
+</div>
+<section class="content-section"><h2 class="section-title">Background</h2><p class="section-content">Between 1974 and 1991, a serial killer who called himself "BTK" (Bind, Torture, Kill) murdered ten people in Wichita, Kansas. He then went quiet for years. In 2004-2005 he resumed sending taunting letters to police and media.</p></section><section class="content-section"><h2 class="section-title">The Digital Evidence</h2><p class="section-content">In February 2005, BTK sent a floppy disk to a local TV station. Investigators analyzed it and found a deleted Word document. Its metadata showed:</p><ul class="section-content" style="padding-left:24px;margin-top:12px;line-height:1.8"><li>The document had been last saved by a user named "Dennis".</li><li>The registered organization of the software was "Christ Lutheran Church".</li></ul><p class="section-content" style="margin-top:14px">A quick web search showed that a man named Dennis Rader was president of the church council. Police then obtained a DNA sample from a medical sample of his daughter, which was a close familial match to crime-scene DNA. He was arrested in February 2005, pleaded guilty and received multiple consecutive life sentences.</p></section><section class="content-section"><h2 class="section-title">Concepts Covered</h2><p class="section-content">Digital evidence on removable media, metadata analysis, recovery of deleted data, correlating digital clues with other evidence, DNA corroboration.</p></section><section class="content-section"><h2 class="section-title">Discussion Questions and Model Answers</h2><ol class="question-list"><li><span class="question">What is metadata, and why can it reveal more than the visible content of a file?</span><p class="answer">Answer: Metadata is data about data: details such as the author, the user who last saved the file, the organisation the software is registered to, creation and modification times, and the software version. Word and other programs record it automatically, and most users never see it. Because it is stored invisibly, it can identify who or what produced a file even when the visible content is anonymous. In this case, "Dennis" and "Christ Lutheran Church" pointed investigators to a specific person.</p></li><li><span class="question">Why did the killer's use of a floppy disk, rather than a printed letter, create an investigative opportunity?</span><p class="answer">Answer: A printed letter offers only physical clues such as paper, ink or handwriting. A digital file carries hidden information (metadata) and can contain remnants of deleted data that forensic tools can recover. The killer assumed the disk was anonymous and that deleting the file erased it, but deletion usually only removes the pointer to the data, so the file and its metadata were still recoverable.</p></li><li><span class="question">How would an investigator preserve the disk's integrity before analysing it? (Think: write-blocker, forensic image, hash value.)</span><p class="answer">Answer: First, connect the original disk through a hardware write-blocker so that nothing can be written to it. Second, create a bit-by-bit forensic image (an exact copy including deleted and unallocated space) and do all analysis on the copy. Third, calculate a hash value (for example SHA-256) of both the original and the image; matching hashes prove the copy is identical and unaltered. Finally, record every step in the chain of custody and store the original securely.</p></li><li><span class="question">Why was the digital clue not enough on its own to convict?</span><p class="answer">Answer: Metadata links a file to a computer or a software registration, not conclusively to a person. Other people could have used the same church computer, and the details could in principle be edited or spoofed. Digital clues therefore generate leads, which must be corroborated with independent evidence. Here the DNA match supported the lead, and the suspect later pleaded guilty.</p></li></ol></section>
+</div>
+<div class="page-navigation"><a href="p4.html" class="nav-button">← Pract 4</a><a href="p6.html" class="nav-button">Pract 6 →</a></div>
+</main>
+<script>
+async function copyPractical(){
+ const content=document.getElementById("practicalContent");
+ const button=document.getElementById("copyButton");
+ const copyText=document.getElementById("copyText");
+ const practicalText=content.innerText.trim();
+ try{await navigator.clipboard.writeText(practicalText)}
+ catch(error){
+  const textArea=document.createElement("textarea");
+  textArea.value=practicalText;textArea.style.position="fixed";textArea.style.opacity="0";
+  document.body.appendChild(textArea);textArea.select();
+  const copied=document.execCommand("copy");document.body.removeChild(textArea);
+  if(!copied){copyText.textContent="Failed";return}
+ }
+ copyText.textContent="Copied";button.classList.add("copied");
+ setTimeout(()=>{copyText.textContent="Copy";button.classList.remove("copied")},1800);
+}
+</script>
+</body>
+</html>
