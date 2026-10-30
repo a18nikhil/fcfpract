@@ -10,11 +10,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 header{width:100%;background:var(--header);border-bottom:1px solid var(--border)}
-.header-inner{max-width:1100px;min-height:72px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:flex-start}
-.all-practicals-button{display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-size:14px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
-.all-practicals-button:hover{background:var(--surface-hover);border-color:var(--accent)}
+.header-inner{max-width:1100px;min-height:60px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:flex-start}
+.all-practicals-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 17px;border:1px solid var(--accent);border-radius:10px;background:var(--surface);color:var(--accent);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 0 8px rgba(77,208,200,.13);transition:background .2s,box-shadow .2s}
+.all-practicals-button:hover{background:var(--surface-hover);box-shadow:0 0 12px rgba(77,208,200,.22)}
 main{max-width:900px;margin:auto;padding:38px 24px 55px}
-.practical-heading{position:relative;display:flex;align-items:center;justify-content:center;min-height:42px;margin-bottom:30px}
+.practical-heading{position:relative;display:flex;align-items:center;justify-content:center;min-height:38px;margin-bottom:12px}
 .practical-label{color:var(--accent);font-size:18px;font-weight:700;letter-spacing:2.5px;text-align:center}
 .copy-button{position:absolute;right:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
 .copy-button:hover{background:var(--surface-hover);border-color:var(--accent)}
@@ -39,10 +39,10 @@ main{max-width:900px;margin:auto;padding:38px 24px 55px}
 .nav-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);background:var(--surface);text-decoration:none;font-size:15px;font-weight:600}
 .nav-button:hover{background:var(--surface-hover)}
 @media(max-width:650px){
-.header-inner{min-height:65px;padding:10px 15px}
+.header-inner{min-height:56px;padding:8px 15px}
 .all-practicals-button{padding:10px 12px;font-size:13px}
-main{padding:27px 15px 40px}
-.practical-heading{margin-bottom:23px;min-height:38px}
+main{padding:13px 15px 35px}
+.practical-heading{margin-bottom:10px;min-height:36px}
 .practical-label{font-size:15px;letter-spacing:2px}
 .copy-button{padding:9px 10px;font-size:12px;gap:6px}
 .copy-button svg{width:14px;height:14px}

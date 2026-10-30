@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +32,6 @@
       min-height: 100vh;
     }
 
-    /* Header */
-
     header {
       width: 100%;
       background: var(--header);
@@ -43,9 +40,9 @@
 
     .header-inner {
       max-width: 1100px;
-      min-height: 72px;
+      min-height: 60px;
       margin: auto;
-      padding: 12px 24px;
+      padding: 9px 24px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -55,39 +52,38 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 15px;
-      border: 1px solid var(--border);
+      gap: 7px;
+      padding: 11px 17px;
+      border: 1px solid var(--accent);
       border-radius: 10px;
       background: var(--surface);
-      color: var(--text);
+      color: var(--accent);
       font-size: 14px;
+      font-weight: 700;
       text-decoration: none;
       white-space: nowrap;
-      transition: background 0.2s, border-color 0.2s;
+      box-shadow: 0 0 8px rgba(77, 208, 200, 0.13);
+      transition: background 0.2s, box-shadow 0.2s;
     }
 
     .all-practicals-button:hover {
       background: var(--surface-hover);
-      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(77, 208, 200, 0.22);
     }
-
-    /* Main Content */
 
     main {
       max-width: 900px;
       margin: auto;
-      padding: 38px 24px 55px;
+      padding: 17px 24px 45px;
     }
-
-    /* Practical Heading */
 
     .practical-heading {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      margin-bottom: 30px;
+      min-height: 38px;
+      margin-bottom: 12px;
     }
 
     .practical-label {
@@ -97,8 +93,6 @@
       letter-spacing: 2.5px;
       text-align: center;
     }
-
-    /* Copy Button */
 
     .copy-button {
       position: absolute;
@@ -138,8 +132,6 @@
       border-color: var(--accent);
     }
 
-    /* Content Sections */
-
     .content-section {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -160,8 +152,6 @@
       font-size: 16px;
       line-height: 1.75;
     }
-
-    /* Steps */
 
     .steps-list {
       list-style: none;
@@ -211,20 +201,16 @@
       line-height: 1.7;
     }
 
-    /* Result */
-
     .result-text {
       color: var(--text);
       font-size: 16px;
       line-height: 1.75;
     }
 
-    /* Bottom Navigation */
-
     .page-navigation {
       display: flex;
       justify-content: flex-end;
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
     .next-button {
@@ -245,27 +231,24 @@
       background: var(--surface-hover);
     }
 
-    /* Mobile */
-
     @media (max-width: 650px) {
-
       .header-inner {
-        min-height: 65px;
-        padding: 10px 15px;
+        min-height: 56px;
+        padding: 8px 15px;
       }
 
       .all-practicals-button {
-        padding: 10px 12px;
+        padding: 10px 14px;
         font-size: 13px;
       }
 
       main {
-        padding: 27px 15px 40px;
+        padding: 13px 15px 35px;
       }
 
       .practical-heading {
-        margin-bottom: 23px;
-        min-height: 38px;
+        margin-bottom: 10px;
+        min-height: 36px;
       }
 
       .practical-label {
@@ -328,10 +311,9 @@
     }
 
     @media (max-width: 380px) {
-
       .all-practicals-button {
         font-size: 12px;
-        padding: 9px 10px;
+        padding: 9px 11px;
       }
 
       .copy-button {
@@ -343,77 +325,45 @@
         font-size: 13px;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- Header -->
-
   <header>
     <div class="header-inner">
-
-      <a href="index.html" class="all-practicals-button">
-        ← All Pract
-      </a>
-
+      <a href="index.html" class="all-practicals-button">← All Pract</a>
     </div>
   </header>
 
-
-  <!-- Practical Content -->
-
   <main>
-
     <div id="practicalContent">
 
-      <!-- Practical Number and Copy Button -->
-
       <div class="practical-heading">
-
         <div class="practical-label">PRACTICAL 01</div>
 
-        <button
-          class="copy-button"
-          id="copyButton"
-          onclick="copyPractical()">
-
+        <button class="copy-button" id="copyButton" onclick="copyPractical()">
           <svg viewBox="0 0 24 24">
             <rect x="8" y="8" width="13" height="13" rx="2"/>
             <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
           </svg>
-
           <span id="copyText">Copy</span>
-
         </button>
-
       </div>
 
-
-      <!-- Aim -->
-
       <section class="content-section">
-
         <h2 class="section-title">Aim</h2>
-
         <p class="section-content">
           To install and set up digital forensic tools such as FTK Imager,
           Autopsy, and Wireshark for acquiring, analyzing, and investigating
           digital evidence.
         </p>
-
       </section>
 
-
-      <!-- Steps -->
-
       <section class="content-section">
-
         <h2 class="section-title">Steps</h2>
 
         <ol class="steps-list">
-
           <li>
             <span class="step-title">Download the Tools</span>
             <p class="step-description">
@@ -470,47 +420,26 @@
               for their respective forensic tasks.
             </p>
           </li>
-
         </ol>
-
       </section>
 
-
-      <!-- Result -->
-
       <section class="content-section">
-
         <h2 class="section-title">Result</h2>
-
         <p class="result-text">
           FTK Imager, Autopsy, and Wireshark are installed and configured
           for their respective digital forensic tasks.
         </p>
-
       </section>
 
     </div>
 
-
-    <!-- Bottom Navigation -->
-
     <div class="page-navigation">
-
-      <a href="p2.html" class="next-button">
-        Pract 2 →
-      </a>
-
+      <a href="p2.html" class="next-button">Pract 2 →</a>
     </div>
-
   </main>
 
-
   <script>
-
-    // Copy the complete practical.
-
     async function copyPractical() {
-
       const content = document.getElementById("practicalContent");
       const button = document.getElementById("copyButton");
       const copyText = document.getElementById("copyText");
@@ -518,11 +447,8 @@
       const practicalText = content.innerText.trim();
 
       try {
-
         await navigator.clipboard.writeText(practicalText);
-
       } catch (error) {
-
         const textArea = document.createElement("textarea");
 
         textArea.value = practicalText;
@@ -533,7 +459,6 @@
         textArea.select();
 
         const copied = document.execCommand("copy");
-
         document.body.removeChild(textArea);
 
         if (!copied) {
@@ -550,7 +475,6 @@
         button.classList.remove("copied");
       }, 1800);
     }
-
   </script>
 
 </body>
