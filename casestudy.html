@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies | FCF Pract</title>
+
+<style>
+:root {
+    --bg: #111820;
+    --header: #15212C;
+    --surface: #1A2632;
+    --surface-hover: #223442;
+    --heading: #F1F5F9;
+    --text: #E8EEF3;
+    --muted: #A3B1BD;
+    --accent: #4DD0C8;
+    --border: #30404D;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+header {
+    background: var(--header);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 5%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 39px;
+    padding: 8px 15px;
+    border: 1px solid var(--accent);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(77,208,200,0.13);
+    transition: 0.2s ease;
+}
+
+.header-button:hover {
+    background: rgba(77,208,200,0.10);
+    box-shadow: 0 0 14px rgba(77,208,200,0.28);
+}
+
+header h1 {
+    margin: 0;
+    color: var(--heading);
+    font-size: 21px;
+    text-align: center;
+}
+
+.copy-wrap {
+    justify-self: end;
+}
+
+/* MAIN CONTENT */
+
+main {
+    width: min(850px, 92%);
+    margin: 22px auto 50px;
+}
+
+.case-study {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 25px 28px;
+    margin-bottom: 25px;
+}
+
+.case-study h2 {
+    color: var(--accent);
+    font-size: 23px;
+    line-height: 1.4;
+    margin: 0 0 7px;
+}
+
+.case-meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: var(--heading);
+    font-size: 17px;
+    margin: 21px 0 7px;
+}
+
+p {
+    margin: 7px 0 12px;
+}
+
+ul, ol {
+    padding-left: 23px;
+    margin: 7px 0 13px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.exam-tip {
+    border-left: 3px solid var(--accent);
+    background: rgba(77,208,200,0.07);
+    padding: 11px 14px;
+    margin-top: 19px;
+    border-radius: 0 8px 8px 0;
+}
+
+.references a {
+    color: var(--accent);
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.references a:hover {
+    text-decoration: underline;
+}
+
+.case-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+}
+
+/* FOOTER */
+
+footer {
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+    padding: 0 15px 25px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    header {
+        grid-template-columns: 1fr auto;
+        padding: 13px 4%;
+    }
+
+    header h1 {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        font-size: 19px;
+    }
+
+    .back-wrap {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .copy-wrap {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .case-study {
+        padding: 20px 17px;
+    }
+
+    .case-study h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+
+/* PRINT */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    header, footer {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+    }
+
+    .case-study {
+        background: white;
+        color: black;
+        border: none;
+        padding: 0;
+    }
+
+    .case-study h2, h3 {
+        color: black;
+    }
+
+    .case-meta {
+        color: #444;
+    }
+
+    .exam-tip {
+        background: #f2f2f2;
+    }
+
+    .references a {
+        color: black;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="back-wrap">
+        <a href="index.html" class="header-button">← All Pract</a>
+    </div>
+
+    <h1>Case Studies</h1>
+
+    <div class="copy-wrap">
+        <button class="header-button" onclick="copyCaseStudies()">Copy</button>
+    </div>
+</header>
+
+<main id="caseStudyContent">
+
+<!-- CASE STUDY 1 -->
+
+<article class="case-study">
+
+<h2>Case Study 1: BTK Killer – The Role of Digital Forensics</h2>
+
+<p class="case-meta">
+Location: Wichita, Kansas, USA | Year: 2005
+</p>
+
+<h3>1. Introduction</h3>
+
+<p>
+The BTK Killer was an American serial killer who used the name BTK,
+meaning "Bind, Torture, Kill". He committed murders in Wichita,
+Kansas, and sent letters to the police and media. Digital forensic
+evidence played an important role in identifying him.
+</p>
+
+<h3>2. Background of the Case</h3>
+
+<p>
+Between 1974 and 1991, ten people were murdered in Wichita, Kansas.
+The killer remained unidentified for many years. In 2004, he resumed
+communication with the police and media, giving investigators an
+opportunity to examine the information he sent.
+</p>
+
+<h3>3. Incident Details</h3>
+
+<p>
+In February 2005, the killer sent a floppy disk to a television
+station. Investigators examined the disk and recovered a deleted
+Microsoft Word document. The document contained metadata that
+provided important clues about the person who had used it.
+</p>
+
+<h3>4. Digital Evidence</h3>
+
+<ul>
+    <li><strong>Floppy Disk:</strong> The storage device sent by the killer.</li>
+    <li><strong>Deleted Word Document:</strong> Investigators recovered a deleted document from the disk.</li>
+    <li><strong>Last Saved By:</strong> The document showed the name "Dennis".</li>
+    <li><strong>Organization:</strong> The metadata referred to "Christ Lutheran Church".</li>
+    <li><strong>Document Metadata:</strong> Information stored in the document helped investigators trace its previous use.</li>
+</ul>
+
+<h3>5. Investigation</h3>
+
+<ol>
+    <li>
+        <strong>Examination of the Floppy Disk:</strong>
+        Investigators examined the disk for stored and deleted data.
+    </li>
+
+    <li>
+        <strong>Recovery of Deleted Data:</strong>
+        A deleted Word document was recovered from the disk.
+    </li>
+
+    <li>
+        <strong>Metadata Analysis:</strong>
+        The document properties showed the name "Dennis" and the
+        organization "Christ Lutheran Church".
+    </li>
+
+    <li>
+        <strong>Identification of the Suspect:</strong>
+        Investigators searched the clues and identified Dennis Rader,
+        who was associated with the church.
+    </li>
+
+    <li>
+        <strong>DNA Examination:</strong>
+        DNA evidence obtained from a medical sample belonging to
+        Rader's daughter provided a familial match with DNA from
+        the crime scenes.
+    </li>
+
+    <li>
+        <strong>Connecting the Evidence:</strong>
+        Digital clues and DNA evidence helped investigators build
+        the case against Rader.
+    </li>
+</ol>
+
+<h3>6. Findings</h3>
+
+<ul>
+    <li>A deleted Word document was recovered from the floppy disk.</li>
+    <li>The document metadata contained the name "Dennis".</li>
+    <li>The metadata also referred to Christ Lutheran Church.</li>
+    <li>These clues helped investigators identify Dennis Rader as a suspect.</li>
+    <li>DNA evidence provided additional support for the investigation.</li>
+</ul>
+
+<h3>7. Outcome / Result</h3>
+
+<p>
+Dennis Rader was arrested in February 2005. He admitted to murdering
+ten people and later pleaded guilty. He was sentenced to ten
+consecutive life sentences.
+</p>
+
+<h3>8. Conclusion</h3>
+
+<p>
+This case shows how deleted files and document metadata can provide
+important clues during a digital forensic investigation. The
+information recovered from the floppy disk helped investigators
+identify a suspect, while other evidence supported the case.
+</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> For a 20-mark answer, give special
+attention to Digital Evidence, Investigation and Findings.
+</div>
+
+</article>
+
+
+<!-- CASE STUDY 2 -->
+
+<article class="case-study">
+
+<h2>Case Study 2: Silk Road – Investigation of Ross Ulbricht</h2>
+
+<p class="case-meta">
+Location: United States | Year: 2013
+</p>
+
+<h3>1. Introduction</h3>
+
+<p>
+Silk Road was an illegal online marketplace that operated on the
+Dark Web. It was used to buy and sell drugs and other unlawful goods.
+Ross Ulbricht operated the website using the online identity
+"Dread Pirate Roberts" (DPR). Digital forensics helped investigators
+identify him and collect evidence.
+</p>
+
+<h3>2. Background of the Case</h3>
+
+<p>
+Silk Road was created in January 2011. It used the Tor network to
+hide the identities and locations of its users. Payments were mainly
+made using Bitcoin. The marketplace operated until October 2013,
+when law-enforcement authorities shut it down.
+</p>
+
+<h3>3. Incident Details</h3>
+
+<p>
+Silk Road allowed users to trade illegal products through an
+anonymous online platform. Thousands of buyers and sellers used
+the website. Investigators began examining the website, its operator
+and the digital activity connected with the identity
+"Dread Pirate Roberts".
+</p>
+
+<h3>4. Digital Evidence</h3>
+
+<ul>
+    <li><strong>Seized Laptop:</strong> A laptop recovered from Ross Ulbricht containing important digital records.</li>
+    <li><strong>Website Records:</strong> Data connected with the operation of the Silk Road marketplace.</li>
+    <li><strong>Chat Messages:</strong> Digital communications related to the website and its activities.</li>
+    <li><strong>Server Data:</strong> Information recovered from the website's server.</li>
+    <li><strong>Bitcoin Transactions:</strong> Financial records used to examine payments connected with the marketplace.</li>
+    <li><strong>Online Identity and Posts:</strong> Online activity that helped investigators connect the suspect with the identity "Dread Pirate Roberts".</li>
+</ul>
+
+<h3>5. Investigation</h3>
+
+<ol>
+    <li>
+        <strong>Online Investigation:</strong>
+        Investigators studied Silk Road and its online activities.
+    </li>
+
+    <li>
+        <strong>Tracing the Suspect:</strong>
+        They examined online information and clues connected with
+        the website's operator.
+    </li>
+
+    <li>
+        <strong>Undercover Activity:</strong>
+        Investigators used undercover accounts and made purchases
+        to understand the marketplace.
+    </li>
+
+    <li>
+        <strong>Server Examination:</strong>
+        Digital data from the seized server was examined for
+        evidence about the website and its operation.
+    </li>
+
+    <li>
+        <strong>Laptop Examination:</strong>
+        The laptop seized from Ross Ulbricht was examined for
+        records, messages and other relevant data.
+    </li>
+
+    <li>
+        <strong>Bitcoin Investigation:</strong>
+        Financial transactions were studied to trace payments
+        connected with Silk Road.
+    </li>
+
+    <li>
+        <strong>Evidence Collection:</strong>
+        Investigators combined the digital and financial evidence
+        to support the case against Ulbricht.
+    </li>
+</ol>
+
+<h3>6. Findings</h3>
+
+<ul>
+    <li>Ross Ulbricht was identified as the creator and operator of Silk Road.</li>
+    <li>He used the online identity "Dread Pirate Roberts".</li>
+    <li>The website was used for illegal online trade.</li>
+    <li>Bitcoin was used to make payments on the marketplace.</li>
+    <li>Records from the laptop and server provided evidence connected with the website's operation.</li>
+</ul>
+
+<h3>7. Outcome / Result</h3>
+
+<p>
+Ross Ulbricht was arrested on 1 October 2013 in San Francisco.
+Authorities seized his laptop and shut down Silk Road. In February
+2015, he was found guilty on all seven charges. In May 2015, he was
+sentenced to life imprisonment.
+</p>
+
+<h3>8. Conclusion</h3>
+
+<p>
+The Silk Road case shows how digital forensic investigation can use
+computer devices, server records, online activity and financial
+information to investigate cybercrime. The examination of digital
+evidence helped authorities identify the person operating the
+marketplace and build a case against him.
+</p>
+
+<div class="exam-tip">
+<strong>Exam Tip:</strong> For a 20-mark answer, focus on Digital
+Evidence, Investigation and Findings.
+</div>
+
+<div class="references">
+
+<h3>References</h3>
+
+<ol>
+    <li>
+        <a href="https://www.fbi.gov/history/artifacts/ross-william-ulbrichts-laptop"
+           target="_blank" rel="noopener">
+           FBI – Ross William Ulbricht's Laptop
+        </a>
+    </li>
+
+    <li>
+        <a href="https://www.fbi.gov/contact-us/field-offices/newyork/news/press-releases/ross-ulbricht-the-creator-and-owner-of-the-silk-road-website-found-guilty-in-manhattan-federal-court-on-all-counts"
+           target="_blank" rel="noopener">
+           FBI – Ross Ulbricht Found Guilty on All Counts
+        </a>
+    </li>
+
+    <li>
+        <a href="https://www.fbi.gov/contact-us/field-offices/newyork/news/press-releases/ross-ulbricht-aka-dread-pirate-roberts-sentenced-in-manhattan-federal-court-to-life-in-prison"
+           target="_blank" rel="noopener">
+           FBI – Ross Ulbricht Sentenced to Life in Prison
+        </a>
+    </li>
+</ol>
+
+</div>
+
+</article>
+
+</main>
+
+<footer>
+Fundamentals of Cyber Forensics · Case Studies
+</footer>
+
+<script>
+async function copyCaseStudies() {
+    const content = document.getElementById("caseStudyContent").innerText;
+    const button = document.querySelector(".copy-wrap button");
+
+    try {
+        await navigator.clipboard.writeText(content);
+
+        const oldText = button.textContent;
+        button.textContent = "Copied!";
+
+        setTimeout(() => {
+            button.textContent = oldText;
+        }, 1200);
+
+    } catch (error) {
+        button.textContent = "Copy unavailable";
+
+        setTimeout(() => {
+            button.textContent = "Copy";
+        }, 1500);
+    }
+}
+</script>
+
+</body>
+</html>
